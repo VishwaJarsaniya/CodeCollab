@@ -24,7 +24,7 @@ function RunView() {
 
     const copyOutput = () => {
         navigator.clipboard.writeText(output)
-        toast.success("Output copied to clipboard")
+        toast.success("Copied to clipboard")
     }
 
     return (
@@ -72,6 +72,7 @@ function RunView() {
                     disabled={isRunning}
                 >
                     Run
+
                 </button>
                 <label className="flex w-full justify-between">
                     Output :
@@ -82,11 +83,13 @@ function RunView() {
                         />
                     </button>
                 </label>
+                
                 <div className="w-full flex-grow resize-none overflow-y-auto rounded-md border-none bg-darkHover p-2 text-white outline-none">
                     <code>
                         <pre className="text-wrap">{output}</pre>
                     </code>
                 </div>
+
             </div>
         </div>
     )

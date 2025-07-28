@@ -30,6 +30,7 @@ function SettingsView() {
         setLanguage(e.target.value)
     const handleFontSizeChange = (e: ChangeEvent<HTMLSelectElement>) =>
         setFontSize(parseInt(e.target.value))
+
     const handleShowGitHubCornerChange = (e: ChangeEvent<HTMLInputElement>) =>
         setShowGitHubCorner(e.target.checked)
 
@@ -48,7 +49,9 @@ function SettingsView() {
             className="flex flex-col items-center gap-2 p-4"
             style={{ height: viewHeight }}
         >
-            <h1 className="view-title">Settings</h1>
+            <h1 className="view-title">
+                Settings
+            </h1>
             {/* Choose Font Family option */}
             <div className="flex w-full items-end gap-2">
                 <Select
@@ -73,16 +76,15 @@ function SettingsView() {
                     })}
                 </select>
             </div>
+
             {/* Choose theme option */}
-            <Select
-                onChange={handleThemeChange}
+            <Select onChange={handleThemeChange}
                 value={theme}
                 options={Object.keys(editorThemes)}
                 title="Theme"
             />
             {/* Choose language option */}
-            <Select
-                onChange={handleLanguageChange}
+            <Select onChange={handleLanguageChange}
                 value={language}
                 options={langNames}
                 title="Language"
